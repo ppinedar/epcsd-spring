@@ -38,4 +38,4 @@ Els primers passos són els mateixos ja que es tracta d'infraestructura comuna a
 * Obrir els projectes
 
   * Estan totalment integrats amb IDEA i es poden llançar i parar amb els botons del propi IDE
-  * Amb kafka correctament configurat en local, es pot accedir a la UI Swagger a les urls localhost:8080/swagger-ui i localhost:8081/swagger-ui
+  * Amb kafka correctament configurat en local, es pot accedir a la UI Swagger a les urls localhost:8080/swagger-ui/index.html i localhost:8081/swagger-ui/index.html
