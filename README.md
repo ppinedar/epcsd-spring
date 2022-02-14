@@ -1,42 +1,125 @@
-# epcsd-spring
+<div id="top"></div>
+<!--
+*** Made using the Best-README-Template
+*** https://github.com/othneildrew/Best-README-Template/blob/master/README.md
+-->
 
-Versió Spring del mateix esquelet disponible a [epcsd-grizzly-jersey](https://github.com/ppinedar/epcsd-grizzly-jersey)
 
-Els primers passos són els mateixos ja que es tracta d'infraestructura comuna a tots dos esquelets.
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <h3 align="center">EPCSD</h3>
 
-* Descarregar PostgreSQL i instal·lar en local (https://www.postgresql.org/download/windows/)
+  <p align="center">
+    Esqueleto de proyecto para el laboratorio de EPCSD
+    <br />
+    <br />
+    <a href="https://github.com/ppinedar/epcsd-spring/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/ppinedar/epcsd-spring/issues">Request Feature</a>
+  </p>
+</div>
 
-  * Instal·lació amb tots els valors per defecte, admin password "epcsd"
 
-  * Obrir pgAdmin 4 (inclós amb PostgreSQL) i crear la bbdd, usuari epcsd, i les taules i grants necessaris
 
-* Instal·lar Apache Kafka 2.8.1 (+ Zookeeper incrustat)
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Contenidos</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">Sobre este proyecto</a>
+      <ul>
+        <li><a href="#built-with">Hecho con</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Cómo empezar</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisitos</a></li>
+        <li><a href="#installation">Instalación</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Uso</a></li>
+    <li><a href="#contact">Contacto</a></li>
+  </ol>
+</details>
 
-  * Descarregar -> https://archive.apache.org/dist/kafka/2.8.1/kafka_2.12-2.8.1.tgz
-  * M'he basat a la guia disponible aqui: https://www.geeksforgeeks.org/how-to-install-and-run-apache-kafka-on-windows/
-    * Cal fer alguna petita configuració quan s'executa en local, s'ha de llegir la guia
-    * Si es vol utilitzar una versió més recent a la llistada, és possible que sigui necessari instal·lar Windows Subsystem for Linux -> https://www.confluent.io/blog/set-up-and-run-kafka-on-windows-linux-wsl-2/
-    * Alternativament, fer servir un docker que ho tingui fet (buscar a dockerhub?)
-  * Comprovar-ne el funcionament afegint algun topic de prova, etc. amb les comandes disponibles a *CARPETA_KAFKA/bin/windows*:
-    * Obrir una consola per cadascun dels següents punts i navegar fins la carpeta d'instal·lació de kafka
-    * Engegar zookeeper: .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
-    * Engegar kafka: .\bin\windows\kafka-server-start.bat .\config\server.properties
-    * Crear topic de prova: .\bin\windows\kafka-topics.bat --create --topic test --zookeeper localhost:2181 --partitions 1 --replication-factor 1
-    * Llistar topics: .\bin\windows\kafka-topics.bat --zookeeper localhost:2181 --list
-      * Engegar un consumidor del topic de prova: .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
-      * Engegar un productor del topic de prova: .\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic test
-      * Els missatges que escriguem a la consola on s'executa el productor haurien de sortir a la consola del consumidor
 
-      * És possible que quan s'estigui desenvolupant es trobi aquest problema per connectar-se al broker: https://stackoverflow.com/questions/27191347/why-i-cannot-connect-to-kafka-from-outside/27194583#27194583
 
-* Instal·lar IDEA
-	
-  * Tot i que la guia ens diu que hem d'instal·lar Maven, en principi no caldria, ja està inclòs a l'IDE (tant IDEA com Eclipse)
-  * Instal·lar (i afegir al classpath) plugin Lombok -> https://projectlombok.org/setup/intellij
+<!-- Sobre este proyecto -->
+## Sobre este proyecto
 
-* Obrir els projectes
+Este es el proyecto de laboratorio de la asignatura EPCSD de la UOC. Se compone de 3 partes:
 
-  * Estan totalment integrats amb IDEA i es poden llançar i parar amb els botons del propi IDE
-  * Amb kafka correctament configurat en local, es pot accedir a la UI Swagger a les urls:
-    * localhost:8080/swagger-ui/index.html
-    * localhost:8081/swagger-ui/index.html
+* Un archivo <a href="https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml">docker-compose.yml</a> para levantar la infraestructura básica necesaria para poder ejecutar los servicios
+* Una carpeta con el microservicio <a href="https://github.com/ppinedar/epcsd-spring/tree/main/showcatalog">ShowCatalog</a>
+* Una carpeta con el microservicio <a href="https://github.com/ppinedar/epcsd-spring/tree/main/notification">Notification</a>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+### Hecho con
+
+* [Docker](https://www.docker.com/)
+* [Spring](https://spring.io/)
+* [Apache Kafka](https://kafka.apache.org/)
+* [PostgreSQL](https://www.postgresql.org/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+## Antes de empezar
+
+Los siguientes puertos deben estar disponibles:
+* 2181 - Apache Kafka (Server)
+* 22181 - Apache Kafka (Server)
+* 29092 - Apache Kafka (Zookeeper)
+* 9092 - Apache Kafka (Zookeeper)
+* 5432 - PostgreSQL
+* 8080 - Adminer
+* 8081 - Usado por el microservicio showcatalog
+* 8082 - Usado por el microservicio notification
+
+## Instalación
+
+### Instalación de Docker Desktop / Docker
+
+Seguir los pasos descritos (según SO) en la siguiente guía: https://docs.docker.com/compose/install/
+
+En Windows, es posible que sea necesario registrarse y descargar Docker Desktop - https://docs.docker.com/desktop/windows/install/)
+
+### Instalación del esqueleto de proyecto
+
+1. Clonar este repositorio en una carpeta de trabajo
+2. Desde la carpeta de trabajo, ejecutar el comando
+  ```sh
+  docker compose up
+  (Win)
+  ```
+  ```sh
+  docker-compose up
+  (Linux)
+  ```
+
+3. Abrir los proyectos showcatalog y notification en el entorno de desarrollo
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- Uso -->
+## Uso
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+_For more examples, please refer to the [Documentation](https://example.com)_
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- Contacto -->
+## Contacto
+
+Pau Pineda - pinedarp@uoc.edu
+
+<p align="right">(<a href="#top">back to top</a>)</p>
