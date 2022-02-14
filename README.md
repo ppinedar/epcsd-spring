@@ -55,18 +55,18 @@ Este es el proyecto de laboratorio de la asignatura EPCSD de la UOC. Se compone 
 * Una carpeta con el microservicio <a href="https://github.com/ppinedar/epcsd-spring/tree/main/showcatalog">ShowCatalog</a>
 * Una carpeta con el microservicio <a href="https://github.com/ppinedar/epcsd-spring/tree/main/notification">Notification</a>
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">ir arriba</a>)</p>
 
 
 
 ### Hecho con
 
 * [Docker](https://www.docker.com/)
-* [Spring](https://spring.io/)
+* [Spring](https://spring.io/) / [Spring Boot](https://spring.io/projects/spring-boot)
 * [Apache Kafka](https://kafka.apache.org/)
 * [PostgreSQL](https://www.postgresql.org/)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">ir arriba</a>)</p>
 
 
 ## Antes de empezar
@@ -81,18 +81,25 @@ Los siguientes puertos deben estar disponibles:
 * 8081 - Usado por el microservicio showcatalog
 * 8082 - Usado por el microservicio notification
 
+
 ## Instalación
 
-### Instalación de Docker Desktop / Docker
+### Instalación de Docker Desktop / Docker Compose
 
 Seguir los pasos descritos (según SO) en la siguiente guía: https://docs.docker.com/compose/install/
 
-En Windows, es posible que sea necesario registrarse y descargar Docker Desktop - https://docs.docker.com/desktop/windows/install/)
+Bajo Windows, es posible que sea necesario registrarse, ya que <a href="https://docs.docker.com/desktop/windows/install/">Docker Desktop</a> lo exige así para proyectos educativos/personales/no-comerciales. Como contrapartida, no será necesario instalar nada más porque ya incorpora _Compose_.
 
 ### Instalación del esqueleto de proyecto
 
-1. Clonar este repositorio en una carpeta de trabajo
-2. Desde la carpeta de trabajo, ejecutar el comando
+Para instalar este esqueleto de proyecto, sólo es necesario clonar este repositorio GIT en una carpeta de trabajo.
+
+<p align="right">(<a href="#top">ir arriba</a>)</p>
+
+
+## Uso
+
+Desde la carpeta de trabajo, ejecutar el comando
   ```sh
   docker compose up
   (Win)
@@ -102,24 +109,41 @@ En Windows, es posible que sea necesario registrarse y descargar Docker Desktop 
   (Linux)
   ```
 
-3. Abrir los proyectos showcatalog y notification en el entorno de desarrollo
-<p align="right">(<a href="#top">back to top</a>)</p>
+Deberían levantarse los contenedores:
+
+* epcsd-spring_adminer_1 - adminer, un cliente SQL
+* epcsd-spring_kafka_1 - el servidor de kafka
+* epcsd-spring_db_1 - la bbdd postgresql
+* epcsd-spring_zookeeper_1 - kafka zookeeper
+
+### ShowCatalog
+
+* Abrir el proyecto _showcatalog_ en el entorno de desarrollo preferido.
+* Ejecutar el proyecto, se crearan algunas tablas con contenidos de prueba. 
+  * **Atención:** con cada nueva ejecución se destruiran todos los contenidos de la BBDD. Dichos contenidos se reemplazaran con los datos de prueba que se encuentran en _src/main/resources/data.sql_.
+* Verificar la correcta ejecución accediendo a http://localhost:8081/swagger-ui/index.html y realizando alguna operación.
+
+### Notification
+
+* Abrir el proyecto _notification_ en el entorno de desarrollo preferido.
+* Ejecutar el proyecto.
+* Verificar la correcta ejecución accediendo a http://localhost:8082/swagger-ui/index.html y realizando alguna operación.
+
+<p align="right">(<a href="#top">ir arriba</a>)</p>
 
 
-<!-- Uso -->
-## Uso
+## Enlaces a librerías y módulos usados
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+* lombok - https://projectlombok.org/
+* springdoc-openapi-ui (SwaggerUI for OpenApi 3) - https://github.com/springdoc/springdoc-openapi
+* Módulos de Spring 
+  * spring-data-jpa - https://spring.io/projects/spring-data-jpa
+  * spring-data-jdbc - https://spring.io/projects/spring-data-jdbc
+  * spring-kafka - https://spring.io/projects/spring-kafka
 
-_For more examples, please refer to the [Documentation](https://example.com)_
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- Contacto -->
 ## Contacto
 
 Pau Pineda - pinedarp@uoc.edu
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">ir arriba</a>)</p>
