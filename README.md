@@ -36,7 +36,8 @@
       <a href="#getting-started">Cómo empezar</a>
       <ul>
         <li><a href="#prerequisites">Prerequisitos</a></li>
-        <li><a href="#installation">Instalación</a></li>
+        <li><a href="#installation">Instalación</a></li>![Screenshot_1](https://user-images.githubusercontent.com/72941559/154020745-075ffbe4-3a35-4d65-9a59-4c5a39ae1daa.png)
+
       </ul>
     </li>
     <li><a href="#usage">Uso</a></li>
@@ -99,6 +100,10 @@ Para instalar este esqueleto de proyecto, sólo es necesario clonar este reposit
 
 ## Uso
 
+**Importante:** es imprescindible seguir estas instrucciones en orden, ya que los proyectos no arrancaran si falla el acceso a BBDD o los productores/consumidores de mensajes no se pueden conectar a Kafka.
+
+### Infraestructura básica (dockers)
+
 Desde la carpeta de trabajo, ejecutar el comando
   ```sh
   docker compose up
@@ -116,14 +121,28 @@ Deberían levantarse los contenedores:
 * epcsd-spring_db_1 - la bbdd postgresql
 * epcsd-spring_zookeeper_1 - kafka zookeeper
 
-### ShowCatalog
+Para comprobar el funcionamiento, se puede acceder al panel _Adminer_ en http://localhost:8080/ y hacer alguna consulta contra la BBDD PostgreSQL que acabamos de instanciar con los siguientes datos de conexión:
+
+* Motor: PostgreSQL
+* Servidor: db
+* Usuario: epcsd
+* Contraseña: epcsd
+* Esquema: epcsd
+
+![Screenshot_0](https://user-images.githubusercontent.com/72941559/154020889-9ae6fca0-a83d-4e3a-8b09-41963f2c9e3c.png)
+
+### Microservicio ShowCatalog
 
 * Abrir el proyecto _showcatalog_ en el entorno de desarrollo preferido.
 * Ejecutar el proyecto, se crearan algunas tablas con contenidos de prueba. 
   * **Atención:** con cada nueva ejecución se destruiran todos los contenidos de la BBDD. Dichos contenidos se reemplazaran con los datos de prueba que se encuentran en _src/main/resources/data.sql_.
 * Verificar la correcta ejecución accediendo a http://localhost:8081/swagger-ui/index.html y realizando alguna operación.
 
-### Notification
+Si todo ha ido bien y entramos al panel _Adminer_ tal como se explica en el punto anterior, deberíamos ver algo más o menos así:
+
+![Adminer](https://user-images.githubusercontent.com/72941559/154020768-af4d20ca-a497-43b4-8fc5-d06dbb33c812.png)
+
+### Microservicio Notification
 
 * Abrir el proyecto _notification_ en el entorno de desarrollo preferido.
 * Ejecutar el proyecto.
@@ -147,3 +166,4 @@ Deberían levantarse los contenedores:
 Pau Pineda - pinedarp@uoc.edu
 
 <p align="right">(<a href="#top">ir arriba</a>)</p>
+
