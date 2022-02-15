@@ -50,11 +50,11 @@
 <!-- Sobre este proyecto -->
 ## Sobre este proyecto
 
-Este es el proyecto de laboratorio de la asignatura EPCSD de la UOC. Se compone de 3 partes:
+Este es el proyecto de laboratorio de la asignatura EPCSD de la UOC. Se compone de 3 partes (cada una tiene su repositorio GIT):
 
 * Un archivo <a href="https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml">docker-compose.yml</a> para levantar la infraestructura básica necesaria para poder ejecutar los servicios
-* Una carpeta con el microservicio <a href="https://github.com/ppinedar/epcsd-spring/tree/main/showcatalog">ShowCatalog</a>
-* Una carpeta con el microservicio <a href="https://github.com/ppinedar/epcsd-spring/tree/main/notification">Notification</a>
+* Una carpeta con el microservicio <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">ShowCatalog</a>
+* Una carpeta con el microservicio <a href="https://github.com/ppinedar/epcsd-spring-notification">Notification</a>
 
 <p align="right">(<a href="#top">ir arriba</a>)</p>
 
@@ -93,8 +93,15 @@ Bajo Windows, es posible que sea necesario registrarse, ya que <a href="https://
 
 ### Instalación del esqueleto de proyecto
 
-Para instalar este esqueleto de proyecto, sólo es necesario clonar este repositorio GIT en una carpeta de trabajo.
+Para instalar este esqueleto de proyecto, sólo es necesario clonar los repositorios GIT en una carpeta de trabajo. Se recomienda seguir la siguiente estructura de carpetas:
 
+```
+epcsd-spring
+├ README.md
+├ docker-compose.yml
+├ epcsd-spring-notification
+└ epcsd-spring-showcatalog
+```
 <p align="right">(<a href="#top">ir arriba</a>)</p>
 
 
@@ -104,7 +111,9 @@ Para instalar este esqueleto de proyecto, sólo es necesario clonar este reposit
 
 ### Infraestructura básica (dockers)
 
-Desde la carpeta de trabajo, ejecutar el comando
+* Clonar el repositorio <a href="https://github.com/ppinedar/epcsd-spring">epcsd-spring</a> en la carpeta de trabajo (_epcsd-spring_ si se ha seguido la recomendación).
+* Desde la carpeta, ejecutar el comando:
+
   ```sh
   docker compose up
   (Win)
@@ -133,6 +142,7 @@ Para comprobar el funcionamiento, se puede acceder al panel _Adminer_ en http://
 
 ### Microservicio ShowCatalog
 
+* Clonar el repositorio <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">epcsd-spring-showcatalog</a> dentro de la carpeta de trabajo (_epcsd-spring_ si se ha seguido la recomendación).
 * Abrir el proyecto _showcatalog_ en el entorno de desarrollo preferido.
 * Ejecutar el proyecto, se crearan algunas tablas con contenidos de prueba. 
   * **Atención:** con cada nueva ejecución se destruiran todos los contenidos de la BBDD. Dichos contenidos se reemplazaran con los datos de prueba que se encuentran en _src/main/resources/data.sql_.
@@ -144,6 +154,7 @@ Si todo ha ido bien y entramos al panel _Adminer_ tal como se explica en el punt
 
 ### Microservicio Notification
 
+* Clonar el repositorio <a href="https://github.com/ppinedar/epcsd-spring-notification">epcsd-spring-notification</a> dentro de la carpeta de trabajo (_epcsd-spring_ si se ha seguido la recomendación).
 * Abrir el proyecto _notification_ en el entorno de desarrollo preferido.
 * Ejecutar el proyecto.
 * Verificar la correcta ejecución accediendo a http://localhost:8082/swagger-ui/index.html y realizando alguna operación.
