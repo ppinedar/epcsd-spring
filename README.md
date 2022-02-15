@@ -27,21 +27,30 @@
   <summary>Contenidos</summary>
   <ol>
     <li>
-      <a href="#about-the-project">Sobre este proyecto</a>
+      <a href="#sobre-este-proyecto">Sobre este proyecto</a>
       <ul>
-        <li><a href="#built-with">Hecho con</a></li>
+        <li><a href="#hecho-con">Hecho con</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Cómo empezar</a>
+      <a href="#antes-de-empezar">Antes de empezar</a>
+    </li>
+    <li>
+      <a href="#instalación">Instalación</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisitos</a></li>
-        <li><a href="#installation">Instalación</a></li>![Screenshot_1](https://user-images.githubusercontent.com/72941559/154020745-075ffbe4-3a35-4d65-9a59-4c5a39ae1daa.png)
-
+        <li><a href="#instalación-de-docker-desktop--docker-compose">Instalación de Docker Desktop / Docker Compose</a></li>
+        <li><a href="#instalación-del-esqueleto-de-proyecto">Instalación del esqueleto de proyecto</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Uso</a></li>
-    <li><a href="#contact">Contacto</a></li>
+    <li><a href="#uso">Uso</a>
+      <ul>
+        <li><a href="#infraestructura-básica-dockers">Infraestructura básica (dockers)</a></li>
+        <li><a href="#microservicio-showcatalog">Microservicio ShowCatalog</a></li>
+        <li><a href="#microservicio-notification">Microservicio Notification</a></li>
+      </ul>
+    </li>
+    <li><a href="#enlaces-a-librerías-y-módulos-usados">Enlaces a librerías y módulos usados</a></li>
+    <li><a href="#contacto">Contacto</a></li>
   </ol>
 </details>
 
