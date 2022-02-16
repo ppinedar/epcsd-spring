@@ -120,7 +120,7 @@ epcsd-spring
 
 ### Infraestructura básica (dockers)
 
-* Clonar el repositorio <a href="https://github.com/ppinedar/epcsd-spring">epcsd-spring</a> en la carpeta de trabajo (_epcsd-spring_ si se ha seguido la recomendación).
+* Descargar ZIP / Clonar el repositorio <a href="https://github.com/ppinedar/epcsd-spring">epcsd-spring</a> en la carpeta de trabajo (_epcsd-spring_ si se ha seguido la recomendación).
 * Desde la carpeta, ejecutar el comando:
 
   ```sh
@@ -151,7 +151,7 @@ Para comprobar el funcionamiento, se puede acceder al panel _Adminer_ en http://
 
 ### Microservicio ShowCatalog
 
-* Clonar el repositorio <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">epcsd-spring-showcatalog</a> dentro de la carpeta de trabajo (_epcsd-spring_ si se ha seguido la recomendación).
+* Descargar ZIP / Clonar el repositorio <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">epcsd-spring-showcatalog</a> dentro de la carpeta de trabajo (_epcsd-spring_ si se ha seguido la recomendación).
 * Abrir el proyecto _showcatalog_ en el entorno de desarrollo preferido.
 * Ejecutar el proyecto, se crearan algunas tablas con contenidos de prueba. 
   * **Atención:** con cada nueva ejecución se destruiran todos los contenidos de la BBDD. Dichos contenidos se reemplazaran con los datos de prueba que se encuentran en _src/main/resources/data.sql_.
@@ -163,7 +163,7 @@ Si todo ha ido bien y entramos al panel _Adminer_ tal como se explica en el punt
 
 ### Microservicio Notification
 
-* Clonar el repositorio <a href="https://github.com/ppinedar/epcsd-spring-notification">epcsd-spring-notification</a> dentro de la carpeta de trabajo (_epcsd-spring_ si se ha seguido la recomendación).
+* Descargar ZIP / Clonar el repositorio <a href="https://github.com/ppinedar/epcsd-spring-notification">epcsd-spring-notification</a> dentro de la carpeta de trabajo (_epcsd-spring_ si se ha seguido la recomendación).
 * Abrir el proyecto _notification_ en el entorno de desarrollo preferido.
 * Ejecutar el proyecto.
 * Verificar la correcta ejecución accediendo a http://localhost:8082/swagger-ui/index.html y realizando alguna operación.
