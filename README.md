@@ -143,7 +143,6 @@ Para verificar que se han levantado todos los contenedores necesarios, ejecutare
   
   ```sh
   docker ps -a
-  (Linux)
   ```
 
 Tendríamos que ver algo como esto:
