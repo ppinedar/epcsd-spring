@@ -139,6 +139,17 @@ Deberían levantarse los contenedores:
 * epcsd-spring_db_1 - la bbdd postgresql
 * epcsd-spring_zookeeper_1 - kafka zookeeper
 
+Para verificar que se han levantado todos los contenedores necesarios, ejecutaremos el siguiente comando:
+  
+  ```sh
+  docker ps -a
+  (Linux)
+  ```
+
+Tendríamos que ver algo como esto:
+
+![Screenshot_1](https://user-images.githubusercontent.com/72941559/155118965-78bfa6f1-24e0-461c-92c4-63df919d2ac1.png)
+
 Para comprobar el funcionamiento, se puede acceder al panel _Adminer_ en http://localhost:8080/ y hacer alguna consulta contra la BBDD PostgreSQL que acabamos de instanciar con los siguientes datos de conexión:
 
 * Motor: PostgreSQL
