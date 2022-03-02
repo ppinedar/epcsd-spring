@@ -49,7 +49,7 @@
         <li><a href="#microservicio-notification">Microservicio Notification</a></li>
       </ul>
     </li>
-    <li><a href="#enlaces-a-librerías-y-módulos-usados">Enlaces a librerías y módulos usados</a></li>
+    <li><a href="#enlaces-a-herramientas-librerías-y-módulos-usados">Enlaces a herramientas, librerías y módulos usados</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ol>
 </details>
@@ -81,7 +81,7 @@ Este es el proyecto de laboratorio de la asignatura EPCSD de la UOC. Se compone 
 
 ## Antes de empezar
 
-Los siguientes puertos deben estar disponibles:
+Para levantar los contenedores que forman parte de la infraestructura básica del proyecto, se usaran los siguientes puertos:
 * 2181 - Apache Kafka (Server)
 * 22181 - Apache Kafka (Server)
 * 29092 - Apache Kafka (Zookeeper)
@@ -91,6 +91,7 @@ Los siguientes puertos deben estar disponibles:
 * 8081 - Usado por el microservicio showcatalog
 * 8082 - Usado por el microservicio notification
 
+No obstante, al tratarse de puertos de uso común es probable que surjan conflictos con aplicaciones preexistentes. En caso que esto suceda, basta con modificar los puertos especificados en el archivo [docker-compose.yml](https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml) para evitar el conflicto. Este link de la documentación oficial de docker compose explica como modificar esta configuración mediante la opción _ports_: [Networking in Compose](https://docs.docker.com/compose/networking/).
 
 ## Instalación
 
@@ -181,14 +182,15 @@ Si todo ha ido bien y entramos al panel _Adminer_ tal como se explica en el punt
 <p align="right">(<a href="#top">ir arriba</a>)</p>
 
 
-## Enlaces a librerías y módulos usados
+## Enlaces a herramientas, librerías y módulos usados
 
-* lombok - https://projectlombok.org/
-* springdoc-openapi-ui (SwaggerUI for OpenApi 3) - https://github.com/springdoc/springdoc-openapi
+* [Docker Compose](https://docs.docker.com/compose/)
+* [Lombok](https://projectlombok.org/)
+* [springdoc-openapi-ui (SwaggerUI for OpenApi 3)](https://github.com/springdoc/springdoc-openapi)
 * Módulos de Spring 
-  * spring-data-jpa - https://spring.io/projects/spring-data-jpa
-  * spring-data-jdbc - https://spring.io/projects/spring-data-jdbc
-  * spring-kafka - https://spring.io/projects/spring-kafka
+  * [spring-data-jpa](https://spring.io/projects/spring-data-jpa)
+  * [spring-data-jdbc](https://spring.io/projects/spring-data-jdbc)
+  * [spring-kafka](https://spring.io/projects/spring-kafka)
 
 
 ## Contacto
