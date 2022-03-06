@@ -83,11 +83,11 @@ Este es el proyecto de laboratorio de la asignatura EPCSD de la UOC. Se compone 
 
 Para levantar los contenedores que forman parte de la infraestructura básica del proyecto, se usaran los siguientes puertos:
 * 22181 - Apache Kafka (Zookeeper)
-* 2909 - Apache Kafka (Server)
+* 29092 - Apache Kafka (Server)
 * 54320 - PostgreSQL
-* 80800 - Adminer
-* 80801 - Usado por el microservicio showcatalog
-* 80802 - Usado por el microservicio notification
+* 18080 - Adminer
+* 18081 - Usado por el microservicio showcatalog
+* 18082 - Usado por el microservicio notification
 
 No obstante, al tratarse de puertos de uso común es probable que surjan conflictos con aplicaciones preexistentes. En caso que esto suceda, basta con modificar los puertos especificados en el archivo [docker-compose.yml](https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml) para evitar el conflicto. Este link de la documentación oficial de docker compose explica como modificar esta configuración mediante la opción _ports_: [Networking in Compose](https://docs.docker.com/compose/networking/).
 
