@@ -145,8 +145,9 @@ Para comprobar el funcionamiento, se puede acceder al panel _Adminer_ en http://
 * Contraseña: epcsd
 * Esquema: epcsd
 
-![Screenshot_0](https://user-images.githubusercontent.com/72941559/154020889-9ae6fca0-a83d-4e3a-8b09-41963f2c9e3c.png)
+<img width="513" alt="Screenshot_1" src="https://user-images.githubusercontent.com/72941559/156942365-9aa515cc-52fd-4c02-a21e-880911269985.png">
 
+<img width="546" alt="Screenshot_2" src="https://user-images.githubusercontent.com/72941559/156942408-cbcb773d-b33d-406c-ba37-db980e3dbf64.png">
 
 ### Microservicio ShowCatalog
 
