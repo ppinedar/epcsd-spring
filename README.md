@@ -77,7 +77,7 @@ Este es el proyecto de laboratorio de la asignatura EPCSD de la UOC. Se compone 
 
 Para levantar los contenedores que forman parte de la infraestructura básica del proyecto, se usaran los siguientes puertos:
 * 22181 - Apache Kafka (Zookeeper)
-* 29092 - Apache Kafka (Server)
+* 19092 - Apache Kafka (Server)
 * 54320 - PostgreSQL
 * 18080 - Adminer
 * 18081 - Usado por el microservicio showcatalog
