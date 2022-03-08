@@ -151,9 +151,9 @@ Para comprobar el funcionamiento, se puede acceder al panel _Adminer_ en http://
 
 ### Microservicios ShowCatalog y Notification
 
-* Descargar ZIP / Clonar los repositorios <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">epcsd-spring-showcatalog</a> y <a href="https://github.com/ppinedar/epcsd-spring-notification">epcsd-spring-notification</a>dentro de la carpeta de trabajo (_epcsd-spring-main_ si se ha seguido la recomendación)
+* Descargar ZIP / Clonar los repositorios <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">epcsd-spring-showcatalog</a> y <a href="https://github.com/ppinedar/epcsd-spring-notification">epcsd-spring-notification</a> dentro de la carpeta de trabajo (_epcsd-spring-main_ si se ha seguido la recomendación)
 * Abrir los proyectos en el entorno de desarrollo preferido
-* Verificar la correcta ejecución comprobando que se puede acceder a http://localhost:18081/swagger-ui/index.html y http://localhost:18082/swagger-ui/index.html
+* Verificar la correcta compilación y ejecución comprobando que se puede acceder a http://localhost:18081/swagger-ui/index.html y http://localhost:18082/swagger-ui/index.html
 
 <p align="right">(<a href="#top">ir arriba</a>)</p>
 
