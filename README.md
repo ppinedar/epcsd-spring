@@ -40,8 +40,7 @@
       <ul>
         <li><a href="#docker-desktop--docker-compose">Docker Desktop / Docker Compose</a></li>
         <li><a href="#infraestructura-básica-dockers">Infraestructura básica (dockers)</a></li>
-        <li><a href="#microservicio-showcatalog">Microservicio ShowCatalog</a></li>
-        <li><a href="#microservicio-notification">Microservicio Notification</a></li>
+        <li><a href="#microservicios-showcatalog-y-notification">Microservicios ShowCatalog y Notification</a></li>
       </ul>
     </li>
     <li><a href="#enlaces-a-herramientas-librerías-y-módulos-usados">Enlaces a herramientas, librerías y módulos usados</a></li>
@@ -65,8 +64,9 @@ Este es el proyecto de laboratorio de la asignatura EPCSD de la UOC. Se compone 
 
 ### Hecho con
 
-* [Docker](https://www.docker.com/)
+* [Docker](https://www.docker.com/) / [Docker Compose](https://github.com/docker/compose)
 * [Spring](https://spring.io/) / [Spring Boot](https://spring.io/projects/spring-boot)
+* [Maven](https://maven.apache.org/)
 * [Apache Kafka](https://kafka.apache.org/)
 * [PostgreSQL](https://www.postgresql.org/)
 
@@ -149,38 +149,26 @@ Para comprobar el funcionamiento, se puede acceder al panel _Adminer_ en http://
 
 <img width="546" alt="Screenshot_2" src="https://user-images.githubusercontent.com/72941559/156942408-cbcb773d-b33d-406c-ba37-db980e3dbf64.png">
 
-### Microservicio ShowCatalog
+### Microservicios ShowCatalog y Notification
 
-* Descargar ZIP / Clonar el repositorio <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">epcsd-spring-showcatalog</a> dentro de la carpeta de trabajo (_epcsd-spring-main_ si se ha seguido la recomendación).
-* Abrir el proyecto _showcatalog_ en el entorno de desarrollo preferido.
-* Ejecutar el proyecto, se crearan algunas tablas con contenidos de prueba. 
-  * **Atención:** con cada nueva ejecución se destruiran todos los contenidos de la BBDD. Dichos contenidos se reemplazaran con los datos de prueba que se encuentran en _src/main/resources/data.sql_.
-* Verificar la correcta ejecución accediendo a http://localhost:8081/swagger-ui/index.html y realizando alguna operación.
-
-Si todo ha ido bien y entramos al panel _Adminer_ tal como se explica en el punto anterior, deberíamos ver algo más o menos así:
-
-![Adminer](https://user-images.githubusercontent.com/72941559/154020768-af4d20ca-a497-43b4-8fc5-d06dbb33c812.png)
-
-
-### Microservicio Notification
-
-* Descargar ZIP / Clonar el repositorio <a href="https://github.com/ppinedar/epcsd-spring-notification">epcsd-spring-notification</a> dentro de la carpeta de trabajo (_epcsd-spring-main_ si se ha seguido la recomendación).
-* Abrir el proyecto _notification_ en el entorno de desarrollo preferido.
-* Ejecutar el proyecto.
-* Verificar la correcta ejecución accediendo a http://localhost:8082/swagger-ui/index.html y realizando alguna operación.
+* Descargar ZIP / Clonar los repositorios <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">epcsd-spring-showcatalog</a> y <a href="https://github.com/ppinedar/epcsd-spring-notification">epcsd-spring-notification</a>dentro de la carpeta de trabajo (_epcsd-spring-main_ si se ha seguido la recomendación)
+* Abrir los proyectos en el entorno de desarrollo preferido
+* Verificar la correcta ejecución comprobando que se puede acceder a http://localhost:18081/swagger-ui/index.html y http://localhost:18082/swagger-ui/index.html
 
 <p align="right">(<a href="#top">ir arriba</a>)</p>
 
 
 ## Enlaces a herramientas, librerías y módulos usados
 
-* [Docker Compose](https://docs.docker.com/compose/)
-* [Lombok](https://projectlombok.org/)
-* [springdoc-openapi-ui (SwaggerUI for OpenApi 3)](https://github.com/springdoc/springdoc-openapi)
-* Módulos de Spring 
+* [Docker](https://www.docker.com/) / [Docker Compose](https://github.com/docker/compose)
+* [Spring](https://spring.io/) / [Spring Boot](https://spring.io/projects/spring-boot)
   * [spring-data-jpa](https://spring.io/projects/spring-data-jpa)
   * [spring-data-jdbc](https://spring.io/projects/spring-data-jdbc)
   * [spring-kafka](https://spring.io/projects/spring-kafka)
+* [Apache Kafka](https://kafka.apache.org/)
+* [PostgreSQL](https://www.postgresql.org/)
+* [Lombok](https://projectlombok.org/)
+* [springdoc-openapi-ui (SwaggerUI for OpenApi 3)](https://github.com/springdoc/springdoc-openapi)
 
 
 ## Contacto
