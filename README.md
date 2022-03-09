@@ -85,6 +85,7 @@ Para levantar los contenedores que forman parte de la infraestructura básica de
 
 Para evitar conflictos con otras aplicaciones instaladas, se han modificado los puertos por defecto de todas las aplicaciones. Aún así, si hubiera un conflicto por un puerto ya en uso, bastaría con modificar los puertos especificados en el archivo [docker-compose.yml](https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml) para solucionar el problema. Este link de la documentación oficial de docker compose explica como modificar esta configuración mediante la opción _ports_: [Networking in Compose](https://docs.docker.com/compose/networking/).
 
+__AVISO IMPORTANTE:__ Los puertos que se modifiquen se tendran que cambiar también en la configuración de los microservicios (normalmente definidos en _application.properties_).
 
 ## Instalación
 
