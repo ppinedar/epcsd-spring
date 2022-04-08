@@ -52,7 +52,7 @@
 
 ## Sobre este proyecto
 
-Este es el proyecto de laboratorio de la asignatura EPCSD de la UOC. Se compone de 3 partes (cada una tiene su repositorio GIT):
+Este es el proyecto de laboratorio de la asignatura EPCSD de la UOC. Se compone de 3 elementos (cada una tiene su repositorio GIT):
 
 * Un archivo <a href="https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml">docker-compose.yml</a> para arrancar la infraestructura básica necesaria para poder ejecutar los servicios
 * Una carpeta para el microservicio <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">ShowCatalog</a>
