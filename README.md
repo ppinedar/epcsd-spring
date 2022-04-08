@@ -54,7 +54,7 @@
 
 Este es el proyecto de laboratorio de la asignatura EPCSD de la UOC. Se compone de 3 partes (cada una tiene su repositorio GIT):
 
-* Un archivo <a href="https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml">docker-compose.yml</a> para levantar la infraestructura básica necesaria para poder ejecutar los servicios
+* Un archivo <a href="https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml">docker-compose.yml</a> para arrancar la infraestructura básica necesaria para poder ejecutar los servicios
 * Una carpeta para el microservicio <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">ShowCatalog</a>
 * Una carpeta para el microservicio <a href="https://github.com/ppinedar/epcsd-spring-notification">Notification</a>
 
@@ -75,7 +75,7 @@ Este es el proyecto de laboratorio de la asignatura EPCSD de la UOC. Se compone 
 
 ## Antes de empezar
 
-Para levantar los contenedores que forman parte de la infraestructura básica del proyecto, se usaran los siguientes puertos:
+Para el funcionamiento de los contenedores que forman parte de la infraestructura básica del proyecto, se usaran los siguientes puertos:
 * 22181 - Apache Kafka (Zookeeper)
 * 19092 - Apache Kafka (Server)
 * 54320 - PostgreSQL
@@ -85,7 +85,7 @@ Para levantar los contenedores que forman parte de la infraestructura básica de
 
 Para evitar conflictos con otras aplicaciones instaladas, se han modificado los puertos por defecto de todas las aplicaciones. Aún así, si hubiera un conflicto por un puerto ya en uso, bastaría con modificar los puertos especificados en el archivo [docker-compose.yml](https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml) para solucionar el problema. Este link de la documentación oficial de docker compose explica como modificar esta configuración mediante la opción _ports_: [Networking in Compose](https://docs.docker.com/compose/networking/).
 
-__AVISO IMPORTANTE:__ Los puertos que se modifiquen se tendran que cambiar también en la configuración de los microservicios (normalmente definidos en _application.properties_).
+__AVISO IMPORTANTE:__ Los puertos que se modifiquen se tendran que cambiar también en la configuración de los microservicios (normalmente definidos en  el archivo _application.properties_).
 
 ## Instalación
 
@@ -94,6 +94,8 @@ __AVISO IMPORTANTE:__ Los puertos que se modifiquen se tendran que cambiar tambi
 Instalaremos Docker Compose siguiendo los pasos descritos (según SO) en la siguiente guía: https://docs.docker.com/compose/install/
 
 Bajo Windows, es posible que sea necesario registrarse, ya que <a href="https://docs.docker.com/desktop/windows/install/">Docker Desktop</a> lo exige así para proyectos educativos/personales/no-comerciales. Como contrapartida, no será necesario instalar nada más porque ya incorpora _Compose_.
+
+Es importante que reviséis con atención los requisitos de hardware y software descritos en las guías de instalación, puesto que si vuestro sistema no los cumple, aunque la aplicación se instale satisfactoriamente, dará errores al intentar arrancar contenedores. Una alternativa para aquellos que tengan sistemas un poco más antiguos es <a href="https://www.how2shout.com/how-to/how-to-install-docker-toolbox-using-chocolatey-choco-on-windows-10.html">Docker Toolbox</a>.
 
 Una vez instalado Docker Compose, seguiremos con el esqueleto de proyecto. Se recomienda seguir la siguiente estructura de carpetas:
 
@@ -121,14 +123,14 @@ epcsd-spring-main
   (Linux)
   ```
 
-Deberían levantarse los contenedores:
+Deberían arrancarse los contenedores:
 
 * epcsd-spring_adminer_1 - adminer, un cliente SQL
 * epcsd-spring_kafka_1 - el servidor de kafka
 * epcsd-spring_db_1 - la bbdd postgresql
 * epcsd-spring_zookeeper_1 - kafka zookeeper
 
-Para verificar que se han levantado todos los contenedores necesarios, ejecutaremos el siguiente comando:
+Para verificar que se han levantado todos de manera correcta, ejecutaremos el siguiente comando:
   
   ```sh
   docker ps -a
