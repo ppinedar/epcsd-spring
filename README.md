@@ -176,7 +176,7 @@ Para comprobar el funcionamiento, se puede acceder al panel _Adminer_ en http://
 
 ## Contacto
 
-Pau Pineda - pinedarp@uoc.edu
+Pau Pineda - ppineda0@uoc.edu
 
 <p align="right">(<a href="#top">ir arriba</a>)</p>
 
