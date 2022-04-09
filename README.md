@@ -8,10 +8,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">EPCSD</h3>
+  <h3 align="center">IPCSD</h3>
 
   <p align="center">
-    Esqueleto de proyecto para el laboratorio de EPCSD
+    Esqueleto de proyecto para el laboratorio de IPCSD
     <br />
     <br />
     <a href="https://github.com/ppinedar/epcsd-spring/issues">Report Bug</a>
