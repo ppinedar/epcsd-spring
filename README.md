@@ -8,10 +8,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">IPCSD</h3>
+  <h3 align="center">SA</h3>
 
   <p align="center">
-    Esqueleto de proyecto para el laboratorio de IPCSD
+    SA project stub
     <br />
     <br />
     <a href="https://github.com/ppinedar/epcsd-spring/issues">Report Bug</a>
@@ -24,80 +24,80 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Contenidos</summary>
+  <summary>Contents</summary>
   <ol>
     <li>
-      <a href="#sobre-este-proyecto">Sobre este proyecto</a>
+      <a href="#about-this-project">About this project</a>
       <ul>
-        <li><a href="#hecho-con">Hecho con</a></li>
+        <li><a href="#made-with">Made with</a></li>
       </ul>
     </li>
     <li>
-      <a href="#antes-de-empezar">Antes de empezar</a>
+      <a href="#before-starting">Before starting</a>
     </li>
     <li>
-      <a href="#instalación">Instalación</a>
+      <a href="#installation">Tnstallation</a>
       <ul>
-        <li><a href="#docker-desktop--docker-compose">Docker Desktop / Docker Compose</a></li>
-        <li><a href="#infraestructura-básica-dockers">Infraestructura básica (dockers)</a></li>
-        <li><a href="#microservicios-showcatalog-y-notification">Microservicios ShowCatalog y Notification</a></li>
+        <li><a href="#docker-desktop--docker-compose-installation">Docker Desktop / Docker Compose installation</a></li>
+        <li><a href="#basic-infrastructure-dockers">Basic infrastructure (dockers)</a></li>
+        <li><a href="#showcatalog-and-notification-microservices">ShowCatalog and Notification microservices</a></li>
       </ul>
     </li>
-    <li><a href="#enlaces-a-herramientas-librerías-y-módulos-usados">Enlaces a herramientas, librerías y módulos usados</a></li>
-    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#links-to-used-tools-libraries-and-modules">Links to used tools, libraries and modules</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
+<!-- About this project -->
+## About this project
+
+This is the lab project for the SA course at the UOC. It is made up of 3 elements (each one in its own GIT repository):
+
+* A <a href="https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml">docker-compose.yml</a> file to startup the basic infrastructure needed to run the services
+* A folder for the <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">ShowCatalog</a> microservice
+* A folder for the <a href="https://github.com/ppinedar/epcsd-spring-notification">Notification</a> microservice
+
+<p align="right">(<a href="#top">go up</a>)</p>
 
 
-## Sobre este proyecto
+### Made with
 
-Este es el proyecto de laboratorio de la asignatura EPCSD de la UOC. Se compone de 3 elementos (cada una tiene su repositorio GIT):
-
-* Un archivo <a href="https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml">docker-compose.yml</a> para arrancar la infraestructura básica necesaria para poder ejecutar los servicios
-* Una carpeta para el microservicio <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">ShowCatalog</a>
-* Una carpeta para el microservicio <a href="https://github.com/ppinedar/epcsd-spring-notification">Notification</a>
-
-<p align="right">(<a href="#top">ir arriba</a>)</p>
-
-
-
-### Hecho con
-
-* [Docker](https://www.docker.com/) / [Docker Compose](https://github.com/docker/compose)
+* [Docker](https://www.docker.com/)
 * [Spring](https://spring.io/) / [Spring Boot](https://spring.io/projects/spring-boot)
-* [Maven](https://maven.apache.org/)
 * [Apache Kafka](https://kafka.apache.org/)
 * [PostgreSQL](https://www.postgresql.org/)
 
-<p align="right">(<a href="#top">ir arriba</a>)</p>
+<p align="right">(<a href="#top">go up</a>)</p>
 
 
-## Antes de empezar
+## Before starting
 
-Para el funcionamiento de los contenedores que forman parte de la infraestructura básica del proyecto, se usaran los siguientes puertos:
+To set up the containers that are part of the basic infrastructure of the project, the following ports will be used:
+
 * 22181 - Apache Kafka (Zookeeper)
-* 19092 - Apache Kafka (Server)
+* 2909 - Apache Kafka (Server)
 * 54320 - PostgreSQL
-* 18080 - Adminer
-* 18081 - Usado por el microservicio showcatalog
-* 18082 - Usado por el microservicio notification
+* 80800 - Adminer
+* 80801 - Used by the showcatalog microservice
+* 80802 - Used by the notification microservice
 
-Para evitar conflictos con otras aplicaciones instaladas, se han modificado los puertos por defecto de todas las aplicaciones. Aún así, si hubiera un conflicto por un puerto ya en uso, bastaría con modificar los puertos especificados en el archivo [docker-compose.yml](https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml) para solucionar el problema. Este link de la documentación oficial de docker compose explica como modificar esta configuración mediante la opción _ports_: [Networking in Compose](https://docs.docker.com/compose/networking/).
+No obstante, al tratarse de puertos de uso común es probable que surjan conflictos con aplicaciones preexistentes. En caso que esto suceda, basta con modificar los puertos especificados en el archivo [docker-compose.yml](https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml) para evitar el conflicto. Este link de la documentación oficial de docker compose explica como modificar esta configuración mediante la opción _ports_: [Networking in Compose](https://docs.docker.com/compose/networking/).
 
-__AVISO IMPORTANTE:__ Los puertos que se modifiquen se tendran que cambiar también en la configuración de los microservicios (normalmente definidos en  el archivo _application.properties_).
+To avoid conflicts with other installed applications, the default ports of all applications have been modified. Still, if there is a conflict over a port already in use, simply modifying the ports specified in the [docker-compose.yml](https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml) file will fix the problem. This link to the official docker compose documentation explains how to modify this configuration using the _ports_: [Networking in Compose](https://docs.docker.com/compose/networking/) option.
+__IMPORTANT NOTICE:__ The modified ports will also have to be changed in the microservices configuration (usually defined in the Spring application.properties file).
 
-## Instalación
 
-### Docker Desktop / Docker Compose
+## Installation
 
-Instalaremos Docker Compose siguiendo los pasos descritos (según SO) en la siguiente guía: https://docs.docker.com/compose/install/
+### Docker Desktop / Docker Compose installation
 
-Bajo Windows, es posible que sea necesario registrarse, ya que <a href="https://docs.docker.com/desktop/windows/install/">Docker Desktop</a> lo exige así para proyectos educativos/personales/no-comerciales. Como contrapartida, no será necesario instalar nada más porque ya incorpora _Compose_.
+Proceed to install Docker Compose following the steps described in the following guide: https://docs.docker.com/compose/install/ (according to your OS).
 
-Es importante que reviséis con atención los requisitos de hardware y software descritos en las guías de instalación, puesto que si vuestro sistema no los cumple, aunque la aplicación se instale satisfactoriamente, dará errores al intentar arrancar contenedores. Una alternativa para aquellos que tengan sistemas un poco más antiguos es <a href="https://www.how2shout.com/how-to/how-to-install-docker-toolbox-using-chocolatey-choco-on-windows-10.html">Docker Toolbox</a>.
+Under Windows, registration may be required, as <a href="https://docs.docker.com/desktop/windows/install/">Docker Desktop</a>  requires it for educational/personal/non-commercial projects. On the plus side, it will not be necessary to install anything else because it already includes _Compose_.
 
-Una vez instalado Docker Compose, seguiremos con el esqueleto de proyecto. Se recomienda seguir la siguiente estructura de carpetas:
+It is important that you carefully review the hardware and software requirements described in the installation guides. If your system fails to meet them, even after a successful installation, you will see errors when trying to start containers. An alternative for those with slightly older systems is <a href="https://www.how2shout.com/how-to/how-to-install-docker-toolbox-using-chocolatey-choco-on-windows-10.html">Docker Toolbox</a>.
+
+Once Docker Compose is installed, we will continue with the project stub. It is recommended to set up a folder structure like so:
 
 ```
 epcsd-spring-main
@@ -106,13 +106,15 @@ epcsd-spring-main
 ├ epcsd-spring-notification-main
 └ epcsd-spring-showcatalog-main
 ```
-<p align="right">(<a href="#top">ir arriba</a>)</p>
+
+<p align="right">(<a href="#top">go up</a>)</p>
 
 
-### Infraestructura básica (dockers)
+### Basic infrastructure (dockers)
 
-* Descargar ZIP / Clonar el repositorio <a href="https://github.com/ppinedar/epcsd-spring">epcsd-spring</a> en la carpeta de trabajo (_epcsd-spring-main_ si se ha seguido la recomendación).
-* Desde la carpeta, ejecutar el comando:
+* Download the code in ZIP format or just clone the <a href="https://github.com/ppinedar/epcsd-spring">epcsd-spring</a> repository in the working folder (_epcsd-spring-main_ if the recommendation has been followed).
+
+* From the work folder, run the command:
 
   ```sh
   docker compose up
@@ -122,46 +124,48 @@ epcsd-spring-main
   docker-compose up
   (Linux)
   ```
+  
+The following containers should start:
 
-Deberían arrancarse los contenedores:
-
-* epcsd-spring_adminer_1 - adminer, un cliente SQL
-* epcsd-spring_kafka_1 - el servidor de kafka
-* epcsd-spring_db_1 - la bbdd postgresql
+* epcsd-spring_adminer_1 - adminer, an SQL client
+* epcsd-spring_kafka_1 - the kafka server
+* epcsd-spring_db_1 - the postgresql database
 * epcsd-spring_zookeeper_1 - kafka zookeeper
 
-Para verificar que se han levantado todos de manera correcta, ejecutaremos el siguiente comando:
-  
+In order to verify that all containers are up and running, we will execute the following command:
+
   ```sh
   docker ps -a
   ```
-
-Deberíamos ver algo como esto:
+  
+  
+We should see something like this:
 
 ![Screenshot_1](https://user-images.githubusercontent.com/72941559/155118965-78bfa6f1-24e0-461c-92c4-63df919d2ac1.png)
 
-Para comprobar el funcionamiento, se puede acceder al panel _Adminer_ en http://localhost:18080/ y hacer alguna consulta contra la BBDD PostgreSQL que acabamos de instanciar con los siguientes datos de conexión:
+To check the operation, you can access the _Adminer_ panel at http://localhost:18080/ and make a query against the PostgreSQL DB that we have just instantiated with the following connection data:
 
-* Motor: PostgreSQL
-* Servidor: db
-* Usuario: epcsd
-* Contraseña: epcsd
-* Esquema: epcsd
+* Engine: PostgreSQL
+* Server: db
+* User: epcsd
+* Password: epcsd
+* Schema: epcsd
 
 <img width="513" alt="Screenshot_1" src="https://user-images.githubusercontent.com/72941559/156942365-9aa515cc-52fd-4c02-a21e-880911269985.png">
 
 <img width="546" alt="Screenshot_2" src="https://user-images.githubusercontent.com/72941559/156942408-cbcb773d-b33d-406c-ba37-db980e3dbf64.png">
 
-### Microservicios ShowCatalog y Notification
 
-* Descargar ZIP / Clonar los repositorios <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">epcsd-spring-showcatalog</a> y <a href="https://github.com/ppinedar/epcsd-spring-notification">epcsd-spring-notification</a> dentro de la carpeta de trabajo (_epcsd-spring-main_ si se ha seguido la recomendación)
-* Abrir los proyectos en el entorno de desarrollo preferido
-* Verificar la correcta compilación y ejecución arrancando los proyectos y comprobando que se puede acceder a http://localhost:18081/swagger-ui/index.html y http://localhost:18082/swagger-ui/index.html
+### ShowCatalog and Notification microservices
 
-<p align="right">(<a href="#top">ir arriba</a>)</p>
+* Download the code in ZIP format or just clone the <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">epcsd-spring-showcatalog</a> and <a href="https://github.com/ppinedar/epcsd-spring-notification">epcsd-spring-notification</a> repositories into the working folder (_epcsd-spring-main_ if the recommendation has been followed)
+* Open the projects in the preferred development environment
+* Verify proper build and run by starting the projects and checking that http://localhost:18081/swagger-ui/index.html and http://localhost:18082/swagger-ui/index.html are accessible
+
+<p align="right">(<a href="#top">go up</a>)</p>
 
 
-## Enlaces a herramientas, librerías y módulos usados
+## Links to used tools, libraries and modules
 
 * [Docker](https://www.docker.com/) / [Docker Compose](https://github.com/docker/compose)
 * [Spring](https://spring.io/) / [Spring Boot](https://spring.io/projects/spring-boot)
@@ -174,9 +178,8 @@ Para comprobar el funcionamiento, se puede acceder al panel _Adminer_ en http://
 * [springdoc-openapi-ui (SwaggerUI for OpenApi 3)](https://github.com/springdoc/springdoc-openapi)
 
 
-## Contacto
+## Contact
 
 Pau Pineda - ppineda0@uoc.edu
 
-<p align="right">(<a href="#top">ir arriba</a>)</p>
-
+<p align="right">(<a href="#top">go up</a>)</p>
