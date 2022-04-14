@@ -81,8 +81,6 @@ To set up the containers that are part of the basic infrastructure of the projec
 * 80801 - Used by the showcatalog microservice
 * 80802 - Used by the notification microservice
 
-No obstante, al tratarse de puertos de uso común es probable que surjan conflictos con aplicaciones preexistentes. En caso que esto suceda, basta con modificar los puertos especificados en el archivo [docker-compose.yml](https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml) para evitar el conflicto. Este link de la documentación oficial de docker compose explica como modificar esta configuración mediante la opción _ports_: [Networking in Compose](https://docs.docker.com/compose/networking/).
-
 To avoid conflicts with other installed applications, the default ports of all applications have been modified. Still, if there is a conflict over a port already in use, simply modifying the ports specified in the [docker-compose.yml](https://github.com/ppinedar/epcsd-spring/blob/main/docker-compose.yml) file will fix the problem. This link to the official docker compose documentation explains how to modify this configuration using the _ports_: [Networking in Compose](https://docs.docker.com/compose/networking/) option.
 __IMPORTANT NOTICE:__ The modified ports will also have to be changed in the microservices configuration (usually defined in the Spring application.properties file).
 
@@ -95,7 +93,7 @@ Proceed to install Docker Compose following the steps described in the following
 
 Under Windows, registration may be required, as <a href="https://docs.docker.com/desktop/windows/install/">Docker Desktop</a>  requires it for educational/personal/non-commercial projects. On the plus side, it will not be necessary to install anything else because it already includes _Compose_.
 
-It is important that you carefully review the hardware and software requirements described in the installation guides. If your system fails to meet them, even after a successful installation, you will see errors when trying to start containers. An alternative for those with slightly older systems is <a href="https://www.how2shout.com/how-to/how-to-install-docker-toolbox-using-chocolatey-choco-on-windows-10.html">Docker Toolbox</a>.
+It is important that you carefully review the hardware and software requirements described in the installation guides. Docker can run on two different backends and each one has different requirements. If your system can't meet them, you will see errors when trying to start containers even after a successful installation. An alternative for those with slightly older systems is <a href="https://www.how2shout.com/how-to/how-to-install-docker-toolbox-using-chocolatey-choco-on-windows-10.html">Docker Toolbox</a>.
 
 Once Docker Compose is installed, we will continue with the project stub. It is recommended to set up a folder structure like so:
 
