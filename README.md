@@ -157,7 +157,7 @@ To check the operation, you can access the _Adminer_ panel at http://localhost:1
 ### ShowCatalog and Notification microservices
 
 * Download the code in ZIP format or just clone the <a href="https://github.com/ppinedar/epcsd-spring-showcatalog">epcsd-spring-showcatalog</a> and <a href="https://github.com/ppinedar/epcsd-spring-notification">epcsd-spring-notification</a> repositories into the working folder (_epcsd-spring-main_ if the recommendation has been followed)
-* Open the projects in the preferred development environment
+* Open the projects in the preferred development environment. __IMPORTANT:__ Each project has to be imported separately as they are separate deployment units.
 * Verify proper build and run by starting the projects and checking that http://localhost:18081/swagger-ui/index.html and http://localhost:18082/swagger-ui/index.html are accessible
 
 <p align="right">(<a href="#top">go up</a>)</p>
